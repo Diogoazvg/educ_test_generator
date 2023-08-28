@@ -36,4 +36,27 @@ jobs:
           DBUSER: ${{ env.DB_USERNAME }}
           DBPASS: ${{ env.DB_PASS }}
           RAILS_ENV: test
-        run: bundle exec rake
+        run: |
+          bundle exec rake --trace
+          bundle exec rake report:simplecov
+
+      - name: Coverage Reporter(Only changed)
+        uses: 5monkeys/cobertura-action@master
+        with:
+          path: coverage/coverage.xml
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          minimum_coverage: 100
+          only_changed_files: true
+          show_line: true
+          report_name: Only changed files below 100 coverage
+          show_missing_max_length: 30
+
+      - name: Coverage Reporter(All Files)
+        uses: 5monkeys/cobertura-action@master
+        with:
+          path: coverage/coverage.xml
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          minimum_coverage: 100
+          show_line: true
+          report_name: All files below 100 coverage
+          show_missing_max_length: 30
