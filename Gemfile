@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate', '~> 3.2'
   gem 'rubocop', require: false
   gem 'rubocop-faker'
   gem 'rubocop-rails', require: false
