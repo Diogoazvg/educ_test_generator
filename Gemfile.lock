@@ -69,6 +69,9 @@ GEM
     annotate (3.2.0)
       activerecord (>= 3.2, < 8.0)
       rake (>= 10.4, < 14.0)
+    apollo-federation (3.8.4)
+      google-protobuf (~> 3.22)
+      graphql (>= 1.10.14)
     ast (2.4.2)
     base64 (0.1.1)
     bcrypt (3.1.19)
@@ -101,6 +104,7 @@ GEM
       i18n (>= 1.8.11, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    google-protobuf (3.25.1-x86_64-linux)
     graphql (2.0.22)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
@@ -236,6 +240,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (~> 3.2)
+  apollo-federation
   bootsnap
   byebug
   cpf_cnpj (~> 0.2.1)

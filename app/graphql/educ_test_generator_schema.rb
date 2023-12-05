@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class EducTestGeneratorSchema < GraphQL::Schema
+  include ApolloFederation::Schema
+  federation version: '2.0'
+
   mutation(Types::MutationType)
   query(Types::QueryType)
 

@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+gem 'apollo-federation'
 gem 'bootsnap', require: false
 gem 'cpf_cnpj', '~> 0.2.1'
 gem 'devise', '~> 4.9', '>= 4.9.2'
