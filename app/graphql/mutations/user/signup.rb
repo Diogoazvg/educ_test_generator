@@ -6,11 +6,11 @@ module Mutations
       argument :email, String, required: true
       argument :password, String, required: true
 
-      type Types::User::UserType
+      type Types::User::SignupType
 
       def resolve(email:, password:)
         if ::User.create!(email: email.downcase, password:)
-          GraphQL::ExecutionError.new('Created!')
+          { response: 'created' }
         else
           GraphQL::ExecutionError.new('Create Error!')
         end

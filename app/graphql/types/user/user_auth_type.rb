@@ -4,7 +4,7 @@ module Types
   module User
     class UserAuthType < GraphQL::Schema::Object
       field :authentication_token, String, null: false
-      field :user, UserType, null: true
+      field :user, SignupType, null: true
 
       def user
         object
