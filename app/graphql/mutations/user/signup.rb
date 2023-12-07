@@ -9,11 +9,9 @@ module Mutations
       type Types::User::SignupType
 
       def resolve(email:, password:)
-        if ::User.create!(email: email.downcase, password:)
-          { response: 'created' }
-        else
-          GraphQL::ExecutionError.new('Create Error!')
-        end
+        { response: 'created' } if ::User.create!(email: email.downcase, password:)
+      rescue StandardError
+        GraphQL::ExecutionError.new('Creating Error!')
       end
     end
   end

@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+module Types
+  module User
+    class UserType < GraphQL::Schema::Object
+      field :authentication_token, String, null: false
+      field :email, String, null: true
+    end
+  end
+end
