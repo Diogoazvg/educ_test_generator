@@ -25,3 +25,5 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Dir[Rails.root.join('test', 'test_helpers', '**', '*.rb')].each { |file| require file }
