@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node gateway.js"
+    "start": "node apolloGateway.js"
   },
   "dependencies": {
-    "@apollo/gateway": "latest",
-    "apollo-server": "latest",
-    "graphql": "latest"
+    "@apollo/gateway": "^2.7.1",
+    "apollo-server": "^3.13.0",
+    "graphql": "^16.8.1"
   }
 }

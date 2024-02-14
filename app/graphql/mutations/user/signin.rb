@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'json_web_token'
+
 module Mutations
   module User
     class Signin < Mutations::BaseMutation
@@ -16,6 +18,7 @@ module Mutations
         if user.present?
           if user.valid_password?(args[:password])
             context[:current_user] = user
+            user.attributes.merge(token: JsonWebToken.encode(user.attributes))
           else
             GraphQL::ExecutionError.new('Incorrect Email/Password')
           end

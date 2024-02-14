@@ -18,6 +18,9 @@
 class User < ApplicationRecord
   include Graphqll::Interface
 
+  has_many :user_permissions
+  has_many :permissions, through: :user_permissions
+
   before_save :ensure_authentication_token
 
   devise :database_authenticatable, :token_authenticatable
