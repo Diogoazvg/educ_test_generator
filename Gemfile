@@ -12,8 +12,10 @@ gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'devise-token_authenticatable', '~> 1.1'
 gem 'graphql', '~> 2.0', '>= 2.0.22'
 gem 'interactor', '~> 3.1', '>= 3.1.2'
+gem 'jwt'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
