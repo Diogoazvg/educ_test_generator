@@ -9,7 +9,7 @@ module Resolvers
       argument :name, String, required: true
 
       def resolve(name:)
-        ::User.find_by(first_name: name)
+        Users::FindUserByName.call(name:).user
       end
     end
   end

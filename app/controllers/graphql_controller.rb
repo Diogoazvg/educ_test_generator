@@ -12,7 +12,8 @@ class GraphqlController < ApplicationController
     operation_name = params[:operationName]
     context = {
       # Query context goes here, for example:
-      # current_user: current_user,
+      current_user:,
+      query_name:
     }
     result = EducTestGeneratorSchema.execute(query, variables:, context:,
                                                     operation_name:)
@@ -50,5 +51,19 @@ class GraphqlController < ApplicationController
     logger.error e.backtrace.join("\n")
 
     render json: { errors: [{ message: e.message, backtrace: e.backtrace }], data: {} }, status: 500
+  end
+
+  def auth_code
+    request.headers['Authorization']
+  end
+
+  def query_name
+    params['query'].match(/\{([^()]+)\(/)&.[](1)&.strip&.underscore
+  end
+
+  def current_user
+    return unless auth_code.present?
+
+    @current_user ||= Users::FindCurrentUser.call!(token: auth_code).user
   end
 end

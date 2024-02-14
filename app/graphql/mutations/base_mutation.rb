@@ -9,13 +9,5 @@ module Mutations
 
     field :success, Boolean, null: false
     field :errors, [String], null: true
-
-    protected
-
-    def authorize_user
-      return true if context[:current_user].present?
-
-      raise GraphQL::ExecutionError, 'User not signed in'
-    end
   end
 end

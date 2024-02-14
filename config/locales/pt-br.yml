@@ -1,0 +1,4 @@
+pt-br:
+  permissions:
+    errors:
+      no_permission: Sem permissão!
