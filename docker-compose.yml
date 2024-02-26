@@ -37,6 +37,16 @@ services:
       ELASTICSEARCH_URL: http://elasticsearch:9200
     depends_on:
       - elasticsearch
+  web:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/educ_test_generator_api
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgresdb
+      - elasticsearch
 volumes:
   postgres-data:
   es-data:
