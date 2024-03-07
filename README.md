@@ -13,11 +13,11 @@
      - Can you find a copy as `.example.env` in the project root path.
     ```ruby
       DB_USERNAME=postgres
-       DB_PASS=postgres
-       SECRET_KEY=394763f4126b4e49765466787a66000820fd259c6
+      DB_PASS=postgres
+      SECRET_KEY=394763f4126b4e49765466787a66000820fd259c6
 
-       # Enable to run web app from local or disable to run from docker.
-       DB_HOST=localhost
+      # Enable to run web app from local or disable to run from docker.
+      DB_HOST=localhost
     ```
   - RUN `bundle install`
   - RUN `docker-compose build`
