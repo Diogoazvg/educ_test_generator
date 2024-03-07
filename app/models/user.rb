@@ -14,6 +14,8 @@
 #  updated_at                      :datetime         not null
 #  authentication_token            :text
 #  authentication_token_created_at :datetime
+#  first_name                      :string           not null
+#  last_name                       :string           not null
 #
 class User < ApplicationRecord
   include Graphqll::Interface
