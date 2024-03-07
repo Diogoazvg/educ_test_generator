@@ -5,7 +5,7 @@
 # Table name: institutions
 #
 #  id         :bigint           not null, primary key
-#  name       :string
+#  name       :string           not null
 #  image      :jsonb
 #  user_id    :bigint
 #  created_at :datetime         not null
