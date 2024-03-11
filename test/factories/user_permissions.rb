@@ -12,5 +12,16 @@
 #
 FactoryBot.define do
   factory :user_permission do
+    user
+
+    transient do
+      permission_name { 'signin' }
+    end
+
+    factory :user_with_permission do
+      after(:build) do |user_permission, evaluator|
+        user_permission.permission = create(:permission, permission_name: evaluator.permission_name)
+      end
+    end
   end
 end

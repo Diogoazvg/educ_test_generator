@@ -6,20 +6,20 @@ class SigninTest < ActiveSupport::TestCase
   include GraphqlRequestHelper
 
   test 'when user do not exists' do
-    result = graphql_fail_request_var(query_string(variables(email: 'user@test.com')))
+    result = graphql_fail_request_var(query_string(variables(email: 'user@test.com')), { query_name: 'user_signin' })
 
     assert_equal(['User not registered on this application'], result.map { |m| m['message'] })
   end
 
   test 'when user exists, but password is wrong' do
     user
-    result = graphql_fail_request_var(query_string(variables(password: '12345679')))
+    result = graphql_fail_request_var(query_string(variables(password: '12345679')), { query_name: 'user_signin' })
     assert_equal(['Incorrect Email/Password'], result.map { |m| m['message'] })
   end
 
   test 'when success Login' do
     user
-    result = graphql_success_request_var(query_string(variables))
+    result = graphql_success_request_var(query_string(variables), { query_name: 'user_signin' })
     assert_equal(variables[:email], result['userSignin']['email'])
   end
 

@@ -5,6 +5,6 @@ FactoryBot.define do
     password { '12345678' }
     first_name { 'John' }
     last_name { 'Doe' }
-    email { 'johndoe@email.com' }
+    email { "johndoe#{rand(99)}@email.com" }
   end
 end

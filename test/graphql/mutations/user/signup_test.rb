@@ -8,12 +8,12 @@ class SignupTest < ActiveSupport::TestCase
   setup { @user = attributes_for(:user) }
 
   test 'when fail, user not created' do
-    result = graphql_fail_request_var(query(variables))
+    result = graphql_fail_request_var(query(variables), { query_name: 'user_signup' })
     assert_equal(['Creating Error!'], result.map { |m| m['message'] })
   end
 
   test 'when success create user' do
-    result = graphql_success_request_var(query(@user))
+    result = graphql_success_request_var(query(@user), { query_name: 'user_signup' })
 
     assert_equal({ 'response' => 'created' }, result['userSignup'])
   end
