@@ -4,8 +4,15 @@ require 'test_helper'
 
 class FindUserByNameTest < ActiveSupport::TestCase
   include GraphqlRequestHelper
-  setup { @user = create(:user) }
-  setup { @nonexistent_name = 'NonexistentName' }
+  setup do
+    @user = create(:user)
+    @nonexistent_name = 'NonexistentName'
+    @permited_user = create(:user_with_permission, permission_name: 'user_find_by_name')
+  end
+
+  def context
+    { query_name: 'user_find_by_name', current_user: @permited_user.user }
+  end
 
   test 'returns the user with the specified name' do
     def query

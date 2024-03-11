@@ -4,7 +4,7 @@ namespace :add do
   desc 'To add permission names'
   task permissions: %i[environment] do
     query_and_mutations_name = %w[
-      find_user_by_name
+      user_find_by_name
       signin
       signup
     ]
