@@ -14,8 +14,10 @@
 require 'test_helper'
 
 class InstitutionTest < ActiveSupport::TestCase
+  setup { @institution = create(:institution) }
+
   # validates
-  # should validate_presence_of(:name)
-  # should validate_uniqueness_of(:name).scoped_to(:user_id)
+  should validate_presence_of(:name)
+  should validate_uniqueness_of(:name).scoped_to(:user_id)
   # _____________________________________
 end
