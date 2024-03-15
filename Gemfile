@@ -6,6 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.2'
 
 gem 'apollo-federation'
+gem 'aws-sdk-s3', '~> 1.143', '>= 1.143.1'
 gem 'bootsnap', require: false
 gem 'cpf_cnpj', '~> 0.2.1'
 gem 'devise', '~> 4.9', '>= 4.9.2'
@@ -17,6 +18,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
+gem 'shrine', '~> 3.5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do

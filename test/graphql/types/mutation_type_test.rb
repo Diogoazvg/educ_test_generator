@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # test/graphql/types/mutation_type_test.rb
 
 require 'test_helper'

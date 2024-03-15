@@ -9,7 +9,7 @@
 #  tag             :string
 #  title           :string           not null
 #  short_answer    :string
-#  questions_id    :bigint
+#  question_id     :bigint
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
