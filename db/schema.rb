@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_240_304_204_617) do
+ActiveRecord::Schema[7.0].define(version: 20_240_312_182_936) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 20_240_304_204_617) do
 
   create_table 'institutions', force: :cascade do |t|
     t.string 'name', null: false
-    t.jsonb 'image'
+    t.jsonb 'image_data'
     t.bigint 'user_id'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
