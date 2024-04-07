@@ -1,4 +1,4 @@
-FROM ruby:3.2.2
+FROM ruby:3.2.3
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
 WORKDIR /educ_test_generator_api
 COPY Gemfile /educ_test_generator_api/Gemfile

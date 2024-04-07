@@ -1,7 +1,7 @@
 name: Rubocop Test
 
 env:
-  RUBY_VERSION: 3.2.2
+  RUBY_VERSION: 3.2.3
 
 on: [pull_request]
 

@@ -1,7 +1,7 @@
 name: Minitest
 
 env:
-  RUBY_VERSION: 3.2.2
+  RUBY_VERSION: 3.2.3
   DB_USERNAME: postgres
   DB_PASS: postgres
 
@@ -15,7 +15,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby-version:
-          - "3.2.2"
+          - "3.2.3"
     steps:
       - uses: actions/checkout@v3
 
