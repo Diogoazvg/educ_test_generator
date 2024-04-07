@@ -17,7 +17,7 @@ gem 'jwt'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'rack-cors', require: 'rack/cors'
-gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
+gem 'rails', '~> 7.1', '>= 7.1.3.2'
 gem 'shrine', '~> 3.5'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
