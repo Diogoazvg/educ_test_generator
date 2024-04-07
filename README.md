@@ -2,7 +2,7 @@
 
 # EN
 ## Used technologies
-- Ruby version 3.2.2.
+- Ruby version 3.2.3
 - Rails 7.0.5.
 - PostgreSQL.
 - Elasticsearch.
