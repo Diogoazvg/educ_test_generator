@@ -15,9 +15,9 @@
 #
 FactoryBot.define do
   factory :answer do
-    complete_answer { 'MyString' }
-    tag { 'MyString' }
-    title { 'MyString' }
-    short_answer { 'MyString' }
+    complete_answer { 'Some Complete Answer' }
+    tag { 'some_tag' }
+    title { 'Some Title' }
+    short_answer { 'Some Short Answer' }
   end
 end

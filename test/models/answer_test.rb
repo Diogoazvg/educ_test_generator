@@ -21,4 +21,16 @@ class AnswerTest < ActiveSupport::TestCase
   should validate_presence_of(:complete_answer)
   should validate_presence_of(:title)
   # _____________________________________
+
+  test 'should normalize title to title case' do
+    answer = build(:answer, title: 'valid title')
+
+    assert_equal 'Valid Title', answer.title
+  end
+
+  test 'should normalize tag to lowercase and strip whitespace' do
+    answer = build(:answer, tag: '  EXAMPLE Tag  ')
+
+    assert_equal 'example tag', answer.tag
+  end
 end
