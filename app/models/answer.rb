@@ -16,4 +16,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
   validates :complete_answer, :title, presence: true
+
+  normalizes :title, with: ->(title) { title.titleize }
+  normalizes :tag, with: ->(tag) { tag.strip.downcase }
 end
