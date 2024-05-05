@@ -11,6 +11,12 @@ module Types
       @klass = Types::QueryType
     end
 
+    test 'authorized? should return true for allowed query' do
+      @context[:query_name] = 'root_query'
+      result = Types::QueryType.authorized?(nil, @context)
+      assert result, 'authorized? should return true for root_query'
+    end
+
     test 'authorized? should return true for a user with the necessary permission' do
       @current_user.permissions.create(permission_name: 'user_find_by_name')
 

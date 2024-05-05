@@ -58,6 +58,8 @@ class GraphqlController < ApplicationController
   end
 
   def query_name
+    return 'root_query' if params['query'].match('__ApolloGetServiceDefinition__')
+
     params['query'].match(/\{([^()]+)\(/)&.[](1)&.strip&.underscore
   end
 
