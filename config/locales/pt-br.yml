@@ -1,4 +1,5 @@
 pt-br:
+  not_created: Falha na criação
   permissions:
     errors:
       no_permission: Sem permissão!

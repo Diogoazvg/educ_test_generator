@@ -5,6 +5,7 @@ module Types
     include Errors::GraphqlErrors
     field :user_signup, mutation: Mutations::User::Signup
     field :user_signin, mutation: Mutations::User::Signin
+    field :create_institution, mutation: Mutations::Institutions::CreateInstitution
 
     def self.authorized?(_object, context)
       return true if %w[user_signup user_signin].include?(context[:query_name])
