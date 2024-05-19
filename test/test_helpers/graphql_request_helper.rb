@@ -21,6 +21,10 @@ module GraphqlRequestHelper
     graphql_request['data']
   end
 
+  def graphql_fail_request
+    graphql_request['errors']
+  end
+
   private
 
   def klass

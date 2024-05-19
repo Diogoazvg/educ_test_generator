@@ -5,6 +5,10 @@ module Errors
     extend ActiveSupport::Concern
 
     included do
+      def default_graphql_error(message, code)
+        raise GraphQL::ExecutionError.new(I18n.t(message), extensions: { code: })
+      end
+
       def self.default_graphql_error(message, code)
         raise GraphQL::ExecutionError.new(I18n.t(message), extensions: { code: })
       end
